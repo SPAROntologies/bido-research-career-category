@@ -1,0 +1,292 @@
+<http://purl.org/spar/bido/polynomial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/Growth> .
+<http://purl.org/spar/bido/low> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/Slope> <http://www.w3.org/2000/01/rdf-schema#label> "slope" .
+<http://purl.org/spar/bido/243-729> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/hasOrderOfMagnitude> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/hasStrength> <http://www.w3.org/2000/01/rdf-schema#label> "has strength" .
+<http://purl.org/spar/bido/729-2187> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://www.w3.org/2006/time#Interval> <http://www.w3.org/2000/01/rdf-schema#comment> "The interval of research years that it is taken into consideration (e.g., the first 5/10 years)." .
+<http://purl.org/spar/bido/2187-6561> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/1-3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/AccelerationPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:N28e4a1cefa3544b89c306afac06a57a3 .
+<http://purl.org/spar/bido/19683-59049> <http://www.w3.org/2000/01/rdf-schema#label> "[19683,59049)" .
+<http://purl.org/spar/bido/6561-19683> <http://www.w3.org/2000/01/rdf-schema#label> "[6561,19683)" .
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/bido/hasGrowth> <http://www.w3.org/2000/01/rdf-schema#label> "has growth" .
+<http://purl.org/spar/bido/729-2187> <http://www.w3.org/2000/01/rdf-schema#label> "[729,2187)" .
+_:N50bcb05650334601ba3b69f5a9d4befb <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/bido/hasTrend> .
+<http://purl.org/spar/bido-research-career-category> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/spar/bido-research-career-category/2014-08-11> .
+<http://www.w3.org/2006/time#Interval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/time> .
+<http://purl.org/spar/bido/OrderOfMagnitude> <http://www.w3.org/2000/01/rdf-schema#comment> "It categorises the number of citations received in the considered period according to a uniform model of common-sense estimation, which describes intervals of half-order of magnitude - i.e., \u201C[0,1)\u201D, \u201C[1,3)\u201D, \u201C[3,9)\u201D, \u201C[9,27)\u201D, \u201C[27,81)\u201D, \u201C[81,243)\u201D, \u201C[243,729)\u201D, etc." .
+<http://purl.org/spar/bido/median-deceleration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/logarithmic> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+_:N2457ac0057eb43778de7c37677829e3c <http://www.w3.org/2002/07/owl#allValuesFrom> <http://xmlns.com/foaf/0.1/Person> .
+<http://purl.org/spar/bido/hasTrend> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/bido/Curve> <http://www.w3.org/2000/01/rdf-schema#comment> "It is the specific shape proper to the clusters identified by the algorithm, which is characterised by a trend (flat/increasing/decreasing) and, in the latter two cases, by an acceleration or deceleration point (none or premature, median, overdue acceleration/deceleration)." .
+<http://purl.org/spar/bido/243-729> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/9-27> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/premature-deceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/Strength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido/19683-59049> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/concernsResearchPeriod> <http://www.w3.org/2000/01/rdf-schema#comment> "This object property allows one to associate a research career category to the research period that caracterises it." .
+_:N6f0362e4f62d40f682947bbaf5da98ca <http://www.w3.org/2002/07/owl#oneOf> _:Ndca0904e93174372bef63932f457cb66 .
+<http://purl.org/spar/bido/Curve> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido/hasAccelerationPoint> <http://www.w3.org/2000/01/rdf-schema#label> "has acceleration point" .
+<http://purl.org/spar/bido/high> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/concernsResearchPeriod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/bido/ResearchCareerCategory> .
+<http://purl.org/spar/bido/logarithmic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/hasCurve> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/bido/ResearchCareerCategory> .
+<http://purl.org/spar/bido/high> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/Strength> .
+<http://purl.org/spar/bido/81-243> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/bido/hasOrderOfMagnitude> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/Slope> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://www.w3.org/2002/07/owl#Thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:N20ec23169c4641689d8413cd992ca968 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spar/bido/decreasing> .
+<http://purl.org/spar/bido/increasing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:N28e4a1cefa3544b89c306afac06a57a3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/bido/withBibliometricData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/bido/27-81> <http://www.w3.org/2000/01/rdf-schema#label> "[27,81)" .
+<http://purl.org/spar/bido/3-9> <http://www.w3.org/2000/01/rdf-schema#label> "[3,9)" .
+<http://purl.org/spar/bido/OrderOfMagnitude> <http://www.w3.org/2000/01/rdf-schema#label> "order of magnitude" .
+<http://purl.org/spar/bido/10-years-beginning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/polynomial> <http://www.w3.org/2000/01/rdf-schema#label> "polynomial" .
+<http://purl.org/spar/bido/moderate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/Strength> .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/bido/CategorialBibliometricData> .
+<http://purl.org/spar/bido/overdue-acceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/AccelerationPoint> .
+<http://purl.org/spar/bido/concernsResearchPeriod> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Interval> .
+<http://purl.org/spar/bido/hasCurve> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/bido/Curve> .
+<http://purl.org/spar/bido-research-career-category> <http://purl.org/dc/elements/1.1/creator> "Silvio Peroni" .
+<http://purl.org/spar/bido/exponential> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/linear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/premature-acceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/2006/time#Interval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido/15-years-beginning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<http://purl.org/spar/bido/overdue-deceleration> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/OrderOfMagnitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido/hasAccelerationPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/bido/overdue-deceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/AccelerationPoint> .
+<http://purl.org/spar/bido/low> <http://www.w3.org/2000/01/rdf-schema#label> "low" .
+<http://purl.org/spar/bido/increasing> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Necf5018d05a349caac258172d80f8830 .
+_:Nd2d2586227234f9ab867ea7b377cec52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido-research-career-category> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/spar/bido-core> .
+<http://purl.org/spar/bido/none> <http://www.w3.org/2000/01/rdf-schema#label> "none" .
+<http://purl.org/spar/bido/hasAccelerationPoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/bido/AccelerationPoint> .
+<http://purl.org/spar/bido/overdue-acceleration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/moderate> <http://www.w3.org/2000/01/rdf-schema#label> "moderate" .
+<http://purl.org/spar/bido/hasOrderOfMagnitude> <http://www.w3.org/2000/01/rdf-schema#label> "has order of magnitude" .
+<http://purl.org/spar/bido/81-243> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/0-1> <http://www.w3.org/2000/01/rdf-schema#label> "[0,1)" .
+<http://purl.org/spar/bido/1-3> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/exponential> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+_:N7b116880b22e4a89962d6b7397ff3e75 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/bido/withBibliometricData> .
+_:N20ec23169c4641689d8413cd992ca968 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:N50bcb05650334601ba3b69f5a9d4befb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/bido/Trend> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Ndca0904e93174372bef63932f457cb66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spar/bido/increasing> .
+<http://purl.org/spar/bido/10-years-beginning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<http://purl.org/spar/bido/5-years-beginning> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/1-3> <http://www.w3.org/2000/01/rdf-schema#label> "[1,3)" .
+<http://purl.org/spar/bido/low> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/Strength> .
+<http://purl.org/spar/bido/Growth> <http://www.w3.org/2000/01/rdf-schema#comment> "It defines the different kinds of growth - i.e., linear/polynomial/exponential/logarithmic - that can characterise a slope." .
+<http://purl.org/spar/bido-research-career-category> <http://purl.org/dc/elements/1.1/rights> "This work is distributed under a Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/)." .
+<http://purl.org/spar/bido/concernsResearchPeriod> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/exponential> <http://www.w3.org/2000/01/rdf-schema#label> "exponential" .
+<http://purl.org/spar/bido/exponential> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/holdsBibliometricData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:N2457ac0057eb43778de7c37677829e3c <http://www.w3.org/2002/07/owl#onProperty> _:N0d5941cf3a71476e93548c47dd9f281c .
+<http://purl.org/spar/bido/Curve> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/decreasing> <http://www.w3.org/2000/01/rdf-schema#label> "decreasing" .
+_:N28e4a1cefa3544b89c306afac06a57a3 <http://www.w3.org/2002/07/owl#allValuesFrom> _:Nd2d2586227234f9ab867ea7b377cec52 .
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/bido/median-acceleration> <http://www.w3.org/2000/01/rdf-schema#label> "median acceleration" .
+<http://purl.org/dc/elements/1.1/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/bido/logarithmic> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/polynomial> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/1-3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido-research-career-category> <http://purl.org/dc/elements/1.1/date> "2014-08-11" .
+<http://purl.org/spar/bido/decreasing> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/decreasing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/Trend> .
+<http://purl.org/spar/bido/exponential> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/Growth> .
+_:N50bcb05650334601ba3b69f5a9d4befb <http://www.w3.org/2002/07/owl#allValuesFrom> _:N6f0362e4f62d40f682947bbaf5da98ca .
+_:N6f0362e4f62d40f682947bbaf5da98ca <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido/Slope> <http://www.w3.org/2000/01/rdf-schema#comment> "It defines the slope of such curve, in terms of strength (low/moderate/high) and kind of growth (linear/polynomial/exponential/logarithmic)" .
+<http://purl.org/spar/bido/hasSlope> <http://www.w3.org/2000/01/rdf-schema#comment> "This object property allows one to associate a research career category to the slope of the curve that caracterises it." .
+<http://purl.org/spar/bido/Curve> <http://www.w3.org/2000/01/rdf-schema#label> "curve" .
+<http://purl.org/spar/bido/Trend> <http://www.w3.org/2000/01/rdf-schema#comment> "The flat/decreasing/increasing trend characterising the curve." .
+<http://purl.org/spar/bido/hasStrength> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that links the slope with the related strength." .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/729-2187> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+_:Nc3278cf2944b4031b4be2d964cb19507 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2000/01/rdf-schema#label> "research career category" .
+<http://purl.org/spar/bido/Strength> <http://www.w3.org/2000/01/rdf-schema#comment> "It defines the different kinds of strength - i.e., low/moderate/high - that can characterise a slope." .
+<http://purl.org/spar/bido/increasing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/Trend> .
+<http://purl.org/spar/bido/premature-deceleration> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/729-2187> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/median-acceleration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/1-3> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/overdue-deceleration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/hasSlope> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/bido/ResearchCareerCategory> .
+<http://purl.org/spar/bido/median-deceleration> <http://www.w3.org/2000/01/rdf-schema#label> "median deceleration" .
+<http://purl.org/spar/bido/hasAccelerationPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that links a curve with its acceleration point." .
+<http://purl.org/spar/bido/overdue-acceleration> <http://www.w3.org/2000/01/rdf-schema#label> "overdue acceleration" .
+<http://purl.org/spar/bido/low> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/none> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/bido/premature-acceleration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/19683-59049> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/9-27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/81-243> <http://www.w3.org/2000/01/rdf-schema#label> "[81,243)" .
+<http://purl.org/spar/bido/moderate> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+_:Necf5018d05a349caac258172d80f8830 <http://www.w3.org/2002/07/owl#allValuesFrom> _:N2457ac0057eb43778de7c37677829e3c .
+<http://purl.org/spar/bido/9-27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/hasCurve> <http://www.w3.org/2000/01/rdf-schema#label> "has curve" .
+<http://purl.org/spar/bido/hasStrength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/bido/high> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/logarithmic> <http://www.w3.org/2000/01/rdf-schema#label> "logarithmic" .
+<http://purl.org/spar/bido/premature-deceleration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/9-27> <http://www.w3.org/2000/01/rdf-schema#label> "[9,27)" .
+<http://purl.org/spar/bido/AccelerationPoint> <http://www.w3.org/2000/01/rdf-schema#label> "acceleration point" .
+<http://purl.org/spar/bido/Growth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido/CategorialBibliometricData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido-research-career-category> <http://www.w3.org/2000/01/rdf-schema#label> "BiDO Research Career Category module" .
+<http://purl.org/spar/bido/15-years-beginning> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/hasTrend> <http://www.w3.org/2000/01/rdf-schema#label> "has trend" .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido/2187-6561> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/premature-acceleration> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/hasSlope> <http://www.w3.org/2000/01/rdf-schema#label> "has slope" .
+<http://purl.org/spar/bido/decreasing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/hasAccelerationPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/bido/Curve> .
+<http://purl.org/spar/bido/moderate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/Growth> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+_:N2457ac0057eb43778de7c37677829e3c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/bido/median-deceleration> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/hasTrend> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/bido/Curve> .
+<http://purl.org/spar/bido-research-career-category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://purl.org/spar/bido-research-career-category> <http://purl.org/dc/elements/1.1/creator> "Francesco Osborne" .
+_:Nc3278cf2944b4031b4be2d964cb19507 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:N50bcb05650334601ba3b69f5a9d4befb .
+<http://purl.org/spar/bido/flat> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/hasGrowth> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that links the slope with the related growth." .
+<http://purl.org/spar/bido/logarithmic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/Growth> .
+<http://purl.org/spar/bido/median-deceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/AccelerationPoint> .
+_:N26c519f7e2be451db0d393e4a3b369e0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spar/bido/Curve> .
+_:N0d5941cf3a71476e93548c47dd9f281c <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/bido/holdsBibliometricData> .
+<http://purl.org/spar/bido/0-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/Growth> <http://www.w3.org/2000/01/rdf-schema#label> "growth" .
+<http://purl.org/spar/bido/hasGrowth> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/2187-6561> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/5-years-beginning> <http://www.w3.org/2000/01/rdf-schema#label> "5 years beginning" .
+<http://purl.org/spar/bido/concernsResearchPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:N31c7d7e0011840e586e1cdcdbb87afe1 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/bido/hasAccelerationPoint> .
+<http://purl.org/spar/bido/19683-59049> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/hasTrend> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/5-years-beginning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<http://purl.org/spar/bido/243-729> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/hasTrend> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that links a curve with its trend." .
+<http://purl.org/spar/bido/729-2187> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/hasOrderOfMagnitude> <http://www.w3.org/2000/01/rdf-schema#comment> "This object property allows one to associate a research career category to the order of magnitude of the citation distribution that caracterises it." .
+<http://purl.org/spar/bido/0-1> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido-research-career-category> <http://purl.org/dc/elements/1.1/creator> "Enrico Motta" .
+<http://purl.org/spar/bido/linear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/Growth> .
+<http://purl.org/spar/bido/hasSlope> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/bido/Slope> .
+_:Necf5018d05a349caac258172d80f8830 <http://www.w3.org/2002/07/owl#onProperty> _:N7b116880b22e4a89962d6b7397ff3e75 .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido/AccelerationPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido-research-career-category> <http://www.w3.org/2002/07/owl#versionInfo> "1.1" .
+<http://purl.org/spar/bido/polynomial> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+_:Nd2d2586227234f9ab867ea7b377cec52 <http://www.w3.org/2002/07/owl#intersectionOf> _:N26c519f7e2be451db0d393e4a3b369e0 .
+<http://purl.org/spar/bido-research-career-category> <http://www.w3.org/2000/01/rdf-schema#comment> "The BiDO Research Career Category module (BiDO-Research-Career-Category) extends the class CategorialData of BiDO-Core with specific categories describing the research career of people.\n\n**URL:** http://purl.org/spar/bido-research-career-category\n\n**Creators**: [Enrico Motta](https://orcid.org/0000-0003-0015-1952), [Francesco Osborne](https://orcid.org/0000-0001-6557-3131), [Silvio Peroni](http://orcid.org/0000-0003-0530-4305)\n\n**License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n**Website:** http://www.sparontologies.net/ontologies/bido\n\n**Cite as:** Osborne, F., Peroni, S., Motta, E. (2014). Clustering Citation Distributions for Semantic Categorization and Citation Prediction. In Proceedings of the 4th Workshop on Linked Science (LISC 2014): 24\u201335. http://ceur-ws.org/Vol-1282/lisc2014_submission_9.pdf" .
+<http://purl.org/spar/bido/none> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/hasStrength> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/bido/Strength> .
+<http://purl.org/spar/bido/5-years-beginning> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/hasStrength> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/6561-19683> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/10-years-beginning> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/hasCurve> <http://www.w3.org/2000/01/rdf-schema#comment> "This object property allows one to associate a research career category to the curve that caracterises it." .
+<http://purl.org/spar/bido/2187-6561> <http://www.w3.org/2000/01/rdf-schema#label> "[2187,6561)" .
+<http://purl.org/spar/bido/2187-6561> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/hasGrowth> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/bido/Growth> .
+<http://purl.org/spar/bido/Trend> <http://www.w3.org/2000/01/rdf-schema#label> "trend" .
+<http://purl.org/spar/bido/premature-acceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/AccelerationPoint> .
+<http://purl.org/spar/bido/concernsResearchPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "concerns research period" .
+<http://purl.org/spar/bido/0-1> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/moderate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/overdue-acceleration> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/hasTrend> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/bido/Trend> .
+<http://purl.org/spar/bido/flat> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+_:N26c519f7e2be451db0d393e4a3b369e0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Nc3278cf2944b4031b4be2d964cb19507 .
+<http://purl.org/spar/bido/hasSlope> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+_:Ndca0904e93174372bef63932f457cb66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N20ec23169c4641689d8413cd992ca968 .
+<http://purl.org/spar/bido/premature-deceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/AccelerationPoint> .
+<http://purl.org/spar/bido/low> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/6561-19683> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/27-81> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/Trend> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/hasOrderOfMagnitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/bido/hasStrength> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/bido/Slope> .
+<http://purl.org/spar/bido/median-acceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/median-acceleration> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/hasCurve> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/bido/none> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/15-years-beginning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido-research-career-category> <http://www.w3.org/2002/07/owl#priorVersion> <https://svn.code.sf.net/p/sempublishing/code/BiDO/bido-rcc-2014-07-14_1-0.owl> .
+_:N28e4a1cefa3544b89c306afac06a57a3 <http://www.w3.org/2002/07/owl#onProperty> _:N31c7d7e0011840e586e1cdcdbb87afe1 .
+<http://purl.org/spar/bido/10-years-beginning> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/overdue-deceleration> <http://www.w3.org/2000/01/rdf-schema#label> "overdue deceleration" .
+<http://purl.org/spar/bido/hasAccelerationPoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/premature-deceleration> <http://www.w3.org/2000/01/rdf-schema#label> "premature deceleration" .
+<http://purl.org/spar/bido/81-243> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/hasSlope> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/bido/Slope> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido/Strength> <http://www.w3.org/2000/01/rdf-schema#label> "strenght" .
+<http://purl.org/spar/bido/81-243> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/flat> <http://www.w3.org/2000/01/rdf-schema#label> "flat" .
+<http://purl.org/spar/bido-research-career-category> <http://purl.org/dc/elements/1.1/description> "This is an additional module of BiDO that extends the class CategorialBibliometricData of the core module with specific categories describing the research career of people. These categories are described by the class ResearchCareerCategory, which is characterised by four specific dimensions that have been used by our algorithm to cluster citation data:\n* the research period considered, i.e., the interval of research years that the algorithm is taking into consideration (e.g., the first 5/10 years);\n* the curve, i.e., the specific shape proper to the clusters identified by the algorithm, which is characterised by a trend (flat/increasing/decreasing) and, in the latter two cases, by an acceleration or deceleration point (none or premature, median, overdue acceleration/deceleration);\n* the slope of such curve, in terms of strength (low/moderate/high) and kind of growth (linear/polynomial/exponential/logarithmic);\n* the order of magnitude, which categorises the number of citations received in the considered period according to a uniform model of common-sense estimation [1], which describes intervals of half-order of magnitude \u2013 i.e., \u201C[0,1)\u201D, \u201C[1,3)\u201D, \u201C[3,9)\u201D, \u201C[9,27)\u201D, \u201C[27,81)\u201D, \u201C[81,243)\u201D, \u201C[243,729)\u201D, etc.\n"@en .
+<http://purl.org/spar/bido/3-9> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+_:Necf5018d05a349caac258172d80f8830 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/bido/15-years-beginning> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/increasing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/median-acceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/AccelerationPoint> .
+<http://purl.org/spar/bido/none> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/AccelerationPoint> .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "This class extends the class bido:CategorialBibliometricData with specific categories describing the research career of people. Each of such categories is characterised by four specific dimensions: the research period considered, the curve of the choosed citation distribution, the slope of such curve, and the order of magnitude of the citation of such research period." .
+<http://purl.org/spar/bido/median-deceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/increasing> <http://www.w3.org/2000/01/rdf-schema#label> "increasing" .
+<http://www.w3.org/2006/time#Interval> <http://www.w3.org/2000/01/rdf-schema#label> "interval" .
+<http://purl.org/spar/bido/3-9> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/6561-19683> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/polynomial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/hasCurve> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/flat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/hasOrderOfMagnitude> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/bido/ResearchCareerCategory> .
+<http://purl.org/spar/bido/27-81> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/15-years-beginning> <http://www.w3.org/2000/01/rdf-schema#label> "15 years beginning" .
+<http://purl.org/spar/bido/AccelerationPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "It is the acceleration or deceleration point (none or premature, median, overdue acceleration/deceleration) od the curve, if any." .
+<http://purl.org/spar/bido/premature-acceleration> <http://www.w3.org/2000/01/rdf-schema#label> "premature acceleration" .
+<http://purl.org/spar/bido/flat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/Trend> .
+<http://purl.org/spar/bido/overdue-acceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/3-9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/high> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/high> <http://www.w3.org/2000/01/rdf-schema#label> "high" .
+<http://purl.org/spar/bido/AccelerationPoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/6561-19683> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/19683-59049> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/hasGrowth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/bido/hasGrowth> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/bido/Slope> .
+<http://purl.org/spar/bido-research-career-category> <http://purl.org/dc/elements/1.1/title> "BiDO Research Career Category module (BiDO-Research-Career-Category)" .
+<http://purl.org/spar/bido/243-729> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/decreasing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/overdue-deceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/9-27> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/0-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/10-years-beginning> <http://www.w3.org/2000/01/rdf-schema#label> "10 years beginning" .
+<http://purl.org/spar/bido/3-9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/bido/OrderOfMagnitude> .
+<http://purl.org/spar/bido/5-years-beginning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/bido/OrderOfMagnitude> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/243-729> <http://www.w3.org/2000/01/rdf-schema#label> "[243,729)" .
+<http://purl.org/spar/bido/27-81> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://purl.org/spar/bido/linear> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/27-81> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+<http://purl.org/spar/bido/Strength> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category> .
+
