@@ -1,0 +1,16 @@
+_:nb53811c1039f410ea6299f1726df0969b1 <http://www.w3.org/2002/07/owl#allValuesFrom> _:nb53811c1039f410ea6299f1726df0969b2 .
+_:nb53811c1039f410ea6299f1726df0969b2 <http://www.w3.org/2002/07/owl#onProperty> _:nb53811c1039f410ea6299f1726df0969b3 .
+_:nb53811c1039f410ea6299f1726df0969b2 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://xmlns.com/foaf/0.1/Person> .
+_:nb53811c1039f410ea6299f1726df0969b3 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/bido/holdsBibliometricDataInTime> .
+_:nb53811c1039f410ea6299f1726df0969b4 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/bido/withBibliometricData> .
+_:nb53811c1039f410ea6299f1726df0969b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nb53811c1039f410ea6299f1726df0969b1 .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Bibliometric data that includes categories describing the research career of people. Each of such categories is characterised by four specific dimensions: the research period considered, the curve of the choosed citation distribution, the slope of such curve, and the order of magnitude of the citation of such research period."@en .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/bido/CategorialBibliometricData> .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido-research-career-category/> .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://purl.org/vocab/vann/example> "\n    :my-research-career-activity a bido:ResearchCareerCategory ;\n        bido:hasCurve :my-curve ;\n        bido:hasSlope :my-slope ;\n        bido:hasOrderOfMagnitude bido:243-729 ;\n        bido:concernsResearchPeriod bido:5-years-beginning .\n\n    :my-curve a bido:Curve ;\n        bido:hasTrend bido:increasing ;\n        bido:hasAccelerationPoint bido:premature-deceleration .\n\n    :my-slope a bido:Slope ;\n        bido:hasStrength bido:low ;\n        bido:hasGrowth bido:logarithmic .\n    " .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2000/01/rdf-schema#label> "research career category"@en .
+<http://purl.org/spar/bido/ResearchCareerCategory> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+_:nb53811c1039f410ea6299f1726df0969b1 <http://www.w3.org/2002/07/owl#onProperty> _:nb53811c1039f410ea6299f1726df0969b4 .
+_:nb53811c1039f410ea6299f1726df0969b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
