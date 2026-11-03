@@ -1,0 +1,17 @@
+@prefix ns1: <http://purl.org/spar/bido/> .
+@prefix ns2: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+ns1:243-729 a ns1:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[243,729)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:243-729 .
+    """ ;
+    rdfs:comment "The citation interval between 243 (included) and 729 (excluded)."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/bido-research-career-category/> ;
+    ns2:term_status <http://purl.org/linked-data/registry#statusStable> .
+
