@@ -28,7 +28,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:n683df3bb17914ae18f7133db2b322013b5"
+        "@id": "_:n63f0a0358b9144928f56bdf0a99ad915b5"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -38,23 +38,23 @@
     ]
   },
   {
-    "@id": "_:n683df3bb17914ae18f7133db2b322013b5",
+    "@id": "_:n63f0a0358b9144928f56bdf0a99ad915b5",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "_:n683df3bb17914ae18f7133db2b322013b6"
+        "@id": "_:n63f0a0358b9144928f56bdf0a99ad915b6"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "_:n683df3bb17914ae18f7133db2b322013b13"
+        "@id": "_:n63f0a0358b9144928f56bdf0a99ad915b13"
       }
     ]
   },
   {
-    "@id": "_:n683df3bb17914ae18f7133db2b322013b6",
+    "@id": "_:n63f0a0358b9144928f56bdf0a99ad915b6",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -65,20 +65,20 @@
             "@id": "http://purl.org/spar/bido/Curve"
           },
           {
-            "@id": "_:n683df3bb17914ae18f7133db2b322013b7"
+            "@id": "_:n63f0a0358b9144928f56bdf0a99ad915b7"
           }
         ]
       }
     ]
   },
   {
-    "@id": "_:n683df3bb17914ae18f7133db2b322013b7",
+    "@id": "_:n63f0a0358b9144928f56bdf0a99ad915b7",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "_:n683df3bb17914ae18f7133db2b322013b8"
+        "@id": "_:n63f0a0358b9144928f56bdf0a99ad915b8"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
@@ -88,7 +88,7 @@
     ]
   },
   {
-    "@id": "_:n683df3bb17914ae18f7133db2b322013b8",
+    "@id": "_:n63f0a0358b9144928f56bdf0a99ad915b8",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -106,7 +106,7 @@
     ]
   },
   {
-    "@id": "_:n683df3bb17914ae18f7133db2b322013b13",
+    "@id": "_:n63f0a0358b9144928f56bdf0a99ad915b13",
     "http://www.w3.org/2002/07/owl#inverseOf": [
       {
         "@id": "http://purl.org/spar/bido/hasAccelerationPoint"

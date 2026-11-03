@@ -2,8 +2,8 @@
   {
     "@id": "http://purl.org/spar/bido/decreasing",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/spar/bido/Trend"
+      "http://purl.org/spar/bido/Trend",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://purl.org/vocab/vann/example": [
       {
