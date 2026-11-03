@@ -1,0 +1,743 @@
+@prefix : <http://purl.org/spar/bido-research-career-category/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix bido: <http://purl.org/spar/bido/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:creator a owl:AnnotationProperty .
+
+dc:date a owl:AnnotationProperty .
+
+dc:description a owl:AnnotationProperty .
+
+dc:rights a owl:AnnotationProperty .
+
+dc:title a owl:AnnotationProperty .
+
+<http://purl.org/spar/bido-research-career-category> a owl:Ontology ;
+    rdfs:label "BiDO Research Career Category module (BiDO-Research-Career-Category)" ;
+    dc:contributor "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"^^xsd:string ;
+    dc:creator "Enrico Motta (https://orcid.org/0000-0003-0015-1952)",
+        "Francesco Osborne (https://orcid.org/0000-0001-6557-3131)",
+        "Silvio Peroni (http://orcid.org/0000-0003-0530-4305)" ;
+    dc:date "2026-10-05" ;
+    dc:description """
+This is an additional module of BiDO that extends the class `bido:CategorialBibliometricData` of the core module with specific categories describing the research career of people. 
+
+![The architecture of BiDO-Research-Career-Category module.](bido-research-career-category.png)
+
+These categories are described by the class `bido:ResearchCareerCategory`, which is characterised by four specific dimensions that have been used by our algorithm to cluster citation data:
+* the _research period considered_, i.e., the interval of research years that the algorithm is taking into consideration (e.g., the first 5/10 years);
+* the _curve_, i.e., the specific shape proper to the clusters identified by the algorithm, which is characterised by a trend (flat/increasing/decreasing) and, in the latter two cases, by an acceleration or deceleration point (none or premature, median, overdue acceleration/deceleration);
+* the _slope_ of such curve, in terms of strength (low/moderate/high) and kind of growth (linear/polynomial/exponential/logarithmic);
+* the _order of magnitude_, which categorises the number of citations received in the considered period according to a uniform model of common-sense estimation [1], which describes intervals of half-order of magnitude – i.e., “[0,1)”, “[1,3)”, “[3,9)”, “[9,27)”, “[27,81)”, “[81,243)”, “[243,729)”, etc.
+"""@en ;
+    dc:title "The BiDO Research Career Category module (BiDO-Research-Career-Category)" ;
+    dcterms:bibliographicCitation "Osborne, F., Peroni, S., Motta, E. (2014). Clustering Citation Distributions for Semantic Categorization and Citation Prediction. In Proceedings of the 4th Workshop on Linked Science (LISC 2014): 24–35. http://ceur-ws.org/Vol-1282/lisc2014_submission_9.pdf" ;
+    dcterms:created "2014-08-11" ;
+    dcterms:issued "2014-08-11" ;
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-10-05" ;
+    dcterms:publisher <https://ror.org/00wb4mk85> ;
+    dcterms:source <https://github.com/SPAROntologies/bido/blob/master/docs/cq.md> ;
+    bibo:doi "https://doi.org/10.25504/FAIRsharing.d7f0a9" ;
+    bibo:status <http://purl.org/ontology/bibo/status/published> ;
+    vann:changes <https://github.com/SPAROntologies/bido-research-career-category/blob/master/CHANGELOG.md> ;
+    vann:preferredNamespacePrefix "bido"@en ;
+    vann:preferredNamespaceUri "http://purl.org/spar/bido"@en ;
+    rdfs:seeAlso <http://www.sparontologies.net/ontologies/bido> ;
+    owl:backwardCompatibleWith :2026-08-14 ;
+    owl:imports <http://purl.org/spar/bido-core> ;
+    owl:priorVersion :2026-08-14 ;
+    owl:versionIRI :2026-10-05 ;
+    owl:versionInfo "1.1.2" ;
+    foaf:logo <https://github.com/SPAROntologies/sparontologies.github.io/blob/master/static/img/spar/spar-logo.png> ;
+    schema:codeRepository <https://github.com/SPAROntologies/bido> ;
+    schema:includedInDataCatalog <https://fairsharing.org/> ;
+    dc:language <http://id.loc.gov/vocabulary/iso639-2/eng> ;
+    schema:keywords 
+        "SPAR Ontologies"@en ,
+        "Semantic Publishing and Referencing Ontologies"@en ,
+        "bibliometrics"@en,
+        "research careers"@en,
+        "scholarly publishing"@en,
+        "scientometrics"@en,
+        "semantic publishing"@en .
+
+bido:0-1 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[0,1)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:0-1 .
+    """ ;
+    rdfs:comment "The citation interval between 0 (included) and 1 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:1-3 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[1,3)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:1-3 .
+    """ ;
+    rdfs:comment "The citation interval between 1 (included) and 3 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:10-years-beginning a owl:NamedIndividual,
+        time:Interval ;
+    rdfs:label "10 years beginning"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:concernsResearchPeriod bido:10-years-beginning .
+    """ ;
+    rdfs:comment "The interval covering the first 10 years of a research career."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:15-years-beginning a owl:NamedIndividual,
+        time:Interval ;
+    rdfs:label "15 years beginning"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:concernsResearchPeriod bido:15-years-beginning .
+    """ ;
+    rdfs:comment "The interval covering the first 15 years of a research career."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:19683-59049 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[19683,59049)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:19683-59049 .
+    """ ;
+    rdfs:comment "The citation interval between 19683 (included) and 59049 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:2187-6561 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[2187,6561)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:2187-6561 .
+    """ ;
+    rdfs:comment "The citation interval between 2187 (included) and 6561 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:243-729 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[243,729)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:243-729 .
+    """ ;
+    rdfs:comment "The citation interval between 243 (included) and 729 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:27-81 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[27,81)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:27-81 .
+    """ ;
+    rdfs:comment "The citation interval between 27 (included) and 81 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:3-9 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[3,9)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:3-9 .
+    """ ;
+    rdfs:comment "The citation interval between 3 (included) and 9 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:5-years-beginning a owl:NamedIndividual,
+        time:Interval ;
+    rdfs:label "5 years beginning"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:concernsResearchPeriod bido:5-years-beginning .
+    """ ;
+    rdfs:comment "The interval covering the first 5 years of a research career."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:6561-19683 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[6561,19683)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:6561-19683 .
+    """ ;
+    rdfs:comment "The citation interval between 6561 (included) and 19683 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:729-2187 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[729,2187)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:729-2187 .
+    """ ;
+    rdfs:comment "The citation interval between 729 (included) and 2187 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:81-243 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[81,243)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:81-243 .
+    """ ;
+    rdfs:comment "The citation interval between 81 (included) and 243 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:9-27 a bido:OrderOfMagnitude,
+        owl:NamedIndividual ;
+    rdfs:label "[9,27)" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:9-27 .
+    """ ;
+    rdfs:comment "The citation interval between 9 (included) and 27 (excluded)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:concernsResearchPeriod a owl:ObjectProperty ;
+    rdfs:label "concerns research period"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:concernsResearchPeriod bido:5-years-beginning .
+
+    bido:5-years-beginning a time:Interval .
+    """ ;
+    rdfs:comment "The relation between a research career category and the research period that characterises it."@en ;
+    rdfs:domain bido:ResearchCareerCategory ;
+    rdfs:isDefinedBy : ;
+    rdfs:range time:Interval ;
+    vs:term_status reg:statusStable .
+
+bido:exponential a bido:Growth,
+        owl:NamedIndividual ;
+    rdfs:label "exponential"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:exponential .
+    """ ;
+    rdfs:comment "An exponential growth pattern characterising the slope of the curve."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:flat a bido:Trend,
+        owl:NamedIndividual ;
+    rdfs:label "flat"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:flat .
+    """ ;
+    rdfs:comment "A constant trend characterising the curve."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:hasCurve a owl:ObjectProperty ;
+    rdfs:label "has curve"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:increasing ;
+        bido:hasAccelerationPoint bido:premature-deceleration .
+    """ ;
+    rdfs:comment "The relation between a research career category and the curve that characterises it."@en ;
+    rdfs:domain bido:ResearchCareerCategory ;
+    rdfs:isDefinedBy : ;
+    rdfs:range bido:Curve ;
+    vs:term_status reg:statusStable .
+
+bido:hasGrowth a owl:ObjectProperty ;
+    rdfs:label "has growth"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:exponential .
+    """ ;
+    rdfs:comment "The relation between the slope and the related growth."@en ;
+    rdfs:domain bido:Slope ;
+    rdfs:isDefinedBy : ;
+    rdfs:range bido:Growth ;
+    vs:term_status reg:statusStable .
+
+bido:hasOrderOfMagnitude a owl:ObjectProperty ;
+    rdfs:label "has order of magnitude"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:243-729 .
+
+    bido:243-729 a bido:OrderOfMagnitude .
+    """ ;
+    rdfs:comment "The relation between a research career category and the order of magnitude of the citation distribution that characterises it."@en ;
+    rdfs:domain bido:ResearchCareerCategory ;
+    rdfs:isDefinedBy : ;
+    rdfs:range bido:OrderOfMagnitude ;
+    vs:term_status reg:statusStable .
+
+bido:hasSlope a owl:ObjectProperty ;
+    rdfs:label "has slope"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:low ;
+        bido:hasGrowth bido:exponential .
+    """ ;
+    rdfs:comment "The relation between a research career category and the slope of the curve that characterises it."@en ;
+    rdfs:domain bido:ResearchCareerCategory ;
+    rdfs:isDefinedBy : ;
+    rdfs:range bido:Slope ;
+    vs:term_status reg:statusStable .
+
+bido:hasStrength a owl:ObjectProperty ;
+    rdfs:label "has strength"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:low .
+    """ ;
+    rdfs:comment "The relation between the slope and the related strength."@en ;
+    rdfs:domain bido:Slope ;
+    rdfs:isDefinedBy : ;
+    rdfs:range bido:Strength ;
+    vs:term_status reg:statusStable .
+
+bido:high a bido:Strength,
+        owl:NamedIndividual ;
+    rdfs:label "high"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:high .
+    """ ;
+    rdfs:comment "A high strength characterizing the slope of the curve."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:linear a bido:Growth,
+        owl:NamedIndividual ;
+    rdfs:label "linear"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:linear .
+    """ ;
+    rdfs:comment "A linear growth pattern characterizing the slope of the curve."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:logarithmic a bido:Growth,
+        owl:NamedIndividual ;
+    rdfs:label "logarithmic"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:logarithmic .
+    """ ;
+    rdfs:comment "A logarithmic growth pattern characterizing the slope of the curve."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:low a bido:Strength,
+        owl:NamedIndividual ;
+    rdfs:label "low"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:low .
+    """ ;
+    rdfs:comment "A low strength characterizing the slope of the curve."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:median-acceleration a bido:AccelerationPoint,
+        owl:NamedIndividual ;
+    rdfs:label "median acceleration"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:median-acceleration .
+    """ ;
+    rdfs:comment "An acceleration point located in the middle of the considered research period."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:median-deceleration a bido:AccelerationPoint,
+        owl:NamedIndividual ;
+    rdfs:label "median deceleration"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:median-deceleration .
+    """ ;
+    rdfs:comment "A deceleration point located in the middle of the considered research period."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:moderate a bido:Strength,
+        owl:NamedIndividual ;
+    rdfs:label "moderate"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:moderate .
+    """ ;
+    rdfs:comment "A moderate strength characterizing the slope of the curve."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:none a bido:AccelerationPoint,
+        owl:NamedIndividual ;
+    rdfs:label "none"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:none .
+    """ ;
+    rdfs:comment "No significant acceleration or deceleration point along the curve."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:overdue-acceleration a bido:AccelerationPoint,
+        owl:NamedIndividual ;
+    rdfs:label "overdue acceleration"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:overdue-acceleration .
+    """ ;
+    rdfs:comment "An acceleration point occurring late in the considered research period."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:overdue-deceleration a bido:AccelerationPoint,
+        owl:NamedIndividual ;
+    rdfs:label "overdue deceleration"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:overdue-deceleration .
+    """ ;
+    rdfs:comment "A deceleration point occurring late in the considered research period."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:polynomial a bido:Growth,
+        owl:NamedIndividual ;
+    rdfs:label "polynomial"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:polynomial .
+    """ ;
+    rdfs:comment "A polynomial growth pattern characterizing the slope of the curve."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:premature-acceleration a bido:AccelerationPoint,
+        owl:NamedIndividual ;
+    rdfs:label "premature acceleration"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:premature-acceleration .
+    """ ;
+    rdfs:comment "An acceleration point occurring early in the considered research period."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:premature-deceleration a bido:AccelerationPoint,
+        owl:NamedIndividual ;
+    rdfs:label "premature deceleration"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:premature-deceleration .
+    """ ;
+    rdfs:comment "A deceleration point occurring early in the considered research period."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+rdfs:comment a owl:AnnotationProperty .
+
+rdfs:isDefinedBy a owl:AnnotationProperty .
+
+rdfs:label a owl:AnnotationProperty .
+
+owl:Thing a owl:Class .
+
+owl:versionInfo a owl:AnnotationProperty .
+
+bido:decreasing a bido:Trend,
+        owl:NamedIndividual ;
+    rdfs:label "decreasing" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:decreasing .
+    """ ;
+    rdfs:comment "A decreasing trend characterizing the curve." ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:hasAccelerationPoint a owl:ObjectProperty ;
+    rdfs:label "has acceleration point" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:premature-deceleration .
+
+    bido:premature-deceleration a bido:AccelerationPoint .
+    """ ;
+    rdfs:comment "The relation between a curve and its acceleration point." ;
+    rdfs:domain bido:Curve ;
+    rdfs:isDefinedBy : ;
+    rdfs:range bido:AccelerationPoint ;
+    vs:term_status reg:statusStable .
+
+bido:hasTrend a owl:ObjectProperty ;
+    rdfs:label "has trend" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:increasing .
+
+    bido:increasing a bido:Trend .
+    """ ;
+    rdfs:comment "The relation between a curve and its trend." ;
+    rdfs:domain bido:Curve ;
+    rdfs:isDefinedBy : ;
+    rdfs:range bido:Trend ;
+    vs:term_status reg:statusStable .
+
+bido:increasing a bido:Trend,
+        owl:NamedIndividual ;
+    rdfs:label "increasing" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:increasing .
+    """ ;
+    rdfs:comment "An increasing trend characterizing the curve." ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+xsd:float a rdfs:Datatype .
+
+xsd:integer a rdfs:Datatype .
+
+bido:Slope a owl:Class ;
+    rdfs:label "slope"@en ;
+    vann:example """
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:low ;
+        bido:hasGrowth bido:logarithmic .
+    """ ;
+    rdfs:comment "The slope of a curve, in terms of strength (low/moderate/high) and kind of growth (linear/polynomial/exponential/logarithmic)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:Curve a owl:Class ;
+    rdfs:label "curve"@en ;
+    vann:example """
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:increasing ;
+        bido:hasAccelerationPoint bido:premature-deceleration .
+    """ ;
+    rdfs:comment "The specific shape proper to the clusters identified by the algorithm, which is characterised by a trend (flat/increasing/decreasing) and, in the latter two cases, by an acceleration or deceleration point (none or premature, median, overdue acceleration/deceleration)."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:ResearchCareerCategory a owl:Class ;
+    rdfs:label "research career category"@en ;
+    vann:example """
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve ;
+        bido:hasSlope :my-slope ;
+        bido:hasOrderOfMagnitude bido:243-729 ;
+        bido:concernsResearchPeriod bido:5-years-beginning .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:increasing ;
+        bido:hasAccelerationPoint bido:premature-deceleration .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:low ;
+        bido:hasGrowth bido:logarithmic .
+    """ ;
+    rdfs:comment "Bibliometric data that includes categories describing the research career of people. Each of such categories is characterised by four specific dimensions: the research period considered, the curve of the chosen citation distribution, the slope of such curve, and the order of magnitude of the citation of such research period."@en ;
+    rdfs:isDefinedBy : ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Restriction ;
+                    owl:allValuesFrom foaf:Person ;
+                    owl:onProperty [ owl:inverseOf bido:holdsBibliometricDataInTime ] ] ;
+            owl:onProperty [ owl:inverseOf bido:withBibliometricData ] ],
+        bido:CategorialBibliometricData ;
+    vs:term_status reg:statusStable .
+
+bido:Strength a owl:Class ;
+    rdfs:label "strength"@en ;
+    vann:example """
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:low .
+
+    bido:low a bido:Strength .
+    """ ;
+    rdfs:comment "A kind of strength - i.e., low/moderate/high - that can characterise a slope."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:Trend a owl:Class ;
+    rdfs:label "trend"@en ;
+    vann:example """
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:increasing .
+
+    bido:increasing a bido:Trend .
+    """ ;
+    rdfs:comment "The flat/decreasing/increasing trend characterising the curve."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:Growth a owl:Class ;
+    rdfs:label "growth"@en ;
+    vann:example """
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:logarithmic .
+
+    bido:logarithmic a bido:Growth .
+    """ ;
+    rdfs:comment "A kind of growth - i.e., linear/polynomial/exponential/logarithmic - that can characterise a slope."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+
+bido:AccelerationPoint a owl:Class ;
+    rdfs:label "acceleration point"@en ;
+    vann:example """
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:premature-deceleration .
+
+    bido:premature-deceleration a bido:AccelerationPoint .
+    """ ;
+    rdfs:comment "The acceleration or deceleration point (none or premature, median, overdue acceleration/deceleration) of the curve, if any."@en ;
+    rdfs:isDefinedBy : ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( bido:Curve [ a owl:Restriction ;
+                                owl:allValuesFrom [ a owl:Class ;
+                                        owl:oneOf ( bido:increasing bido:decreasing ) ] ;
+                                owl:onProperty bido:hasTrend ] ) ] ;
+            owl:onProperty [ owl:inverseOf bido:hasAccelerationPoint ] ] ;
+    vs:term_status reg:statusStable .
+
+bido:OrderOfMagnitude a owl:Class ;
+    rdfs:label "order of magnitude"@en ;
+    vann:example """
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:243-729 .
+
+    bido:243-729 a bido:OrderOfMagnitude .
+    """ ;
+    rdfs:comment "A categorization of the number of citations received in the considered period according to a uniform model of common-sense estimation, which describes intervals of half-order of magnitude - i.e., “[0,1)”, “[1,3)”, “[3,9)”, “[9,27)”, “[27,81)”, “[81,243)”, “[243,729)”, etc."@en ;
+    rdfs:isDefinedBy : ;
+    vs:term_status reg:statusStable .
+

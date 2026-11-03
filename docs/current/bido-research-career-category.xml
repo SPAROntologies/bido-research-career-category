@@ -1,48 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-   xmlns:bibo="http://purl.org/ontology/bibo/"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:dcterms="http://purl.org/dc/terms/"
    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:ns2="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+   xmlns:ns3="http://purl.org/ontology/bibo/"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:schema="https://schema.org/"
-   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:vann="http://purl.org/vocab/vann/"
-   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="http://purl.org/spar/bido/2187-6561">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/decreasing">
+    <rdfs:label>decreasing</rdfs:label>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:decreasing .
+    </vann:example>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/Trend"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[2187,6561)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 2187 (included) and 6561 (excluded).</rdfs:comment>
+    <rdfs:comment>A decreasing trend characterizing the curve.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/hasGrowth">
+    <rdfs:domain rdf:resource="http://purl.org/spar/bido/Slope"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/bido/Growth"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
     <vann:example>
     :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:2187-6561 .
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:exponential .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">The relation between the slope and the related growth.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has growth</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/low">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/Strength"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">low</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:comment xml:lang="en">A low strength characterizing the slope of the curve.</rdfs:comment>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:low .
+    </vann:example>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/linear">
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">linear</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:linear .
+    </vann:example>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/Growth"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="en">A linear growth pattern characterizing the slope of the curve.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/moderate">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/Strength"/>
+    <rdfs:label xml:lang="en">moderate</rdfs:label>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:moderate .
+    </vann:example>
+    <rdfs:comment xml:lang="en">A moderate strength characterizing the slope of the curve.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/bido/concernsResearchPeriod">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">concerns research period</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between a research career category and the research period that caracterises it.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/ResearchCareerCategory"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/bido/ResearchCareerCategory"/>
+    <rdfs:comment xml:lang="en">The relation between a research career category and the research period that characterises it.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2006/time#Interval"/>
+    <rdfs:label xml:lang="en">concerns research period</rdfs:label>
     <vann:example>
     :my-research-category a bido:ResearchCareerCategory ;
         bido:concernsResearchPeriod bido:5-years-beginning .
 
     bido:5-years-beginning a time:Interval .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/Trend">
+    <vann:example>
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:increasing .
+
+    bido:increasing a bido:Trend .
+    </vann:example>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:comment xml:lang="en">The flat/decreasing/increasing trend characterising the curve.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">trend</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/flat">
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:flat .
+    </vann:example>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/Trend"/>
+    <rdfs:comment xml:lang="en">A constant trend characterising the curve.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:label xml:lang="en">flat</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/overdue-acceleration">
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:overdue-acceleration .
+    </vann:example>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="en">An acceleration point occurring late in the considered research period.</rdfs:comment>
+    <rdfs:label xml:lang="en">overdue acceleration</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/0-1">
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label>[0,1)</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <rdfs:comment xml:lang="en">The citation interval between 0 (included) and 1 (excluded).</rdfs:comment>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:0-1 .
+    </vann:example>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/Slope">
+    <rdfs:comment xml:lang="en">The slope of a curve, in terms of strength (low/moderate/high) and kind of growth (linear/polynomial/exponential/logarithmic).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <vann:example>
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:low ;
+        bido:hasGrowth bido:logarithmic .
+    </vann:example>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">slope</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/hasStrength">
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">has strength</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/spar/bido/Strength"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/bido/Slope"/>
+    <rdfs:comment xml:lang="en">The relation between the slope and the related strength.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:low .
+    </vann:example>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/10-years-beginning">
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:concernsResearchPeriod bido:10-years-beginning .
+    </vann:example>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">10 years beginning</rdfs:label>
+    <rdfs:comment xml:lang="en">The interval covering the first 10 years of a research career.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/bido/Curve">
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">The specific shape proper to the clusters identified by the algorithm, which is characterised by a trend (flat/increasing/decreasing) and, in the latter two cases, by an acceleration or deceleration point (none or premature, median, overdue acceleration/deceleration).</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">curve</rdfs:label>
-    <rdfs:comment xml:lang="en">The specific shape proper to the clusters identified by the algorithm, which is characterised by a trend (flat/increasing/decreasing) and, in the latter two cases, by an acceleration or deceleration point (none or premature, median, overdue acceleration/deceleration).</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
     <vann:example>
     :my-research-career-activity a bido:ResearchCareerCategory ;
@@ -52,49 +217,39 @@
         bido:hasTrend bido:increasing ;
         bido:hasAccelerationPoint bido:premature-deceleration .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/5-years-beginning">
+  <rdf:Description rdf:about="http://purl.org/spar/bido/19683-59049">
+    <rdfs:comment xml:lang="en">The citation interval between 19683 (included) and 59049 (excluded).</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
-    <rdfs:label xml:lang="en">5 years beginning</rdfs:label>
-    <rdfs:comment xml:lang="en">The interval covering the first 5 years of a research career.</rdfs:comment>
+    <rdfs:label>[19683,59049)</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <vann:example>
     :my-research-category a bido:ResearchCareerCategory ;
-        bido:concernsResearchPeriod bido:5-years-beginning .
+        bido:hasOrderOfMagnitude bido:19683-59049 .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/linear">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/Growth"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">linear</rdfs:label>
-    <rdfs:comment xml:lang="en">A linear growth pattern characterizing the slope of the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasGrowth bido:linear .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity">
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time#"/>
-    <rdfs:comment xml:lang="en">A temporal interval or instant.</rdfs:comment>
-    <rdfs:label xml:lang="en">temporal entity</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/bido-research-career-category">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <rdfs:label>BiDO Research Career Category module (BiDO-Research-Career-Category)</rdfs:label>
-    <dc:creator>Enrico Motta (https://orcid.org/0000-0003-0015-1952)</dc:creator>
-    <dc:creator>Francesco Osborne (https://orcid.org/0000-0001-6557-3131)</dc:creator>
+    <vann:changes rdf:resource="https://github.com/SPAROntologies/bido-research-career-category/blob/master/CHANGELOG.md"/>
     <dc:creator>Silvio Peroni (http://orcid.org/0000-0003-0530-4305)</dc:creator>
-    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)</dc:contributor>
-    <dc:date>2026-08-14</dc:date>
+    <dc:creator>Francesco Osborne (https://orcid.org/0000-0001-6557-3131)</dc:creator>
+    <dc:creator>Enrico Motta (https://orcid.org/0000-0003-0015-1952)</dc:creator>
+    <owl:versionInfo>1.1.2</owl:versionInfo>
+    <owl:priorVersion rdf:resource="http://purl.org/spar/bido-research-career-category/2026-08-14"/>
+    <dc:language rdf:resource="http://id.loc.gov/vocabulary/iso639-2/eng"/>
+    <dcterms:modified>2026-10-05</dcterms:modified>
+    <owl:backwardCompatibleWith rdf:resource="http://purl.org/spar/bido-research-career-category/2026-08-14"/>
+    <dcterms:issued>2014-08-11</dcterms:issued>
+    <schema:keywords xml:lang="en">scholarly publishing</schema:keywords>
+    <schema:keywords xml:lang="en">SPAR Ontologies</schema:keywords>
+    <schema:keywords xml:lang="en">scientometrics</schema:keywords>
+    <schema:keywords xml:lang="en">Semantic Publishing and Referencing Ontologies</schema:keywords>
+    <schema:keywords xml:lang="en">research careers</schema:keywords>
+    <schema:keywords xml:lang="en">bibliometrics</schema:keywords>
+    <schema:keywords xml:lang="en">semantic publishing</schema:keywords>
+    <dc:title>The BiDO Research Career Category module (BiDO-Research-Career-Category)</dc:title>
+    <dcterms:publisher rdf:resource="https://ror.org/00wb4mk85"/>
     <dc:description xml:lang="en">
 This is an additional module of BiDO that extends the class `bido:CategorialBibliometricData` of the core module with specific categories describing the research career of people. 
 
@@ -106,236 +261,126 @@ These categories are described by the class `bido:ResearchCareerCategory`, which
 * the _slope_ of such curve, in terms of strength (low/moderate/high) and kind of growth (linear/polynomial/exponential/logarithmic);
 * the _order of magnitude_, which categorises the number of citations received in the considered period according to a uniform model of common-sense estimation [1], which describes intervals of half-order of magnitude – i.e., “[0,1)”, “[1,3)”, “[3,9)”, “[9,27)”, “[27,81)”, “[81,243)”, “[243,729)”, etc.
 </dc:description>
-    <dc:title>The BiDO Research Career Category module (BiDO-Research-Career-Category)</dc:title>
-    <owl:imports rdf:resource="http://purl.org/spar/bido-core"/>
-    <owl:backwardCompatibleWith rdf:resource="http://purl.org/spar/bido-research-career-category/2014-08-11"/>
-    <owl:priorVersion rdf:resource="http://purl.org/spar/bido-research-career-category/2014-08-11"/>
-    <owl:versionIRI rdf:resource="http://purl.org/spar/bido-research-career-category/2026-08-14"/>
-    <dcterms:created>2014-08-11</dcterms:created>
-    <dcterms:issued>2014-08-11</dcterms:issued>
-    <dcterms:modified>2026-08-14</dcterms:modified>
-    <bibo:doi>https://doi.org/10.25504/FAIRsharing.d7f0a9</bibo:doi>
-    <vann:preferredNamespacePrefix xml:lang="en">bido</vann:preferredNamespacePrefix>
     <vann:preferredNamespaceUri xml:lang="en">http://purl.org/spar/bido</vann:preferredNamespaceUri>
+    <schema:includedInDataCatalog rdf:resource="https://fairsharing.org/"/>
+    <owl:imports rdf:resource="http://purl.org/spar/bido-core"/>
+    <dcterms:source rdf:resource="https://github.com/SPAROntologies/bido/blob/master/docs/cq.md"/>
+    <dc:date>2026-10-05</dc:date>
+    <ns3:status rdf:resource="http://purl.org/ontology/bibo/status/published"/>
+    <dcterms:created>2014-08-11</dcterms:created>
+    <vann:preferredNamespacePrefix xml:lang="en">bido</vann:preferredNamespacePrefix>
+    <ns3:doi>https://doi.org/10.25504/FAIRsharing.d7f0a9</ns3:doi>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <foaf:logo rdf:resource="https://github.com/SPAROntologies/sparontologies.github.io/blob/master/static/img/spar/spar-logo.png"/>
     <rdfs:seeAlso rdf:resource="http://www.sparontologies.net/ontologies/bido"/>
     <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-    <dcterms:publisher rdf:resource="https://ror.org/00wb4mk85"/>
-    <dcterms:source rdf:resource="https://github.com/SPAROntologies/bido/blob/master/docs/cq.md"/>
-    <foaf:logo rdf:resource="https://github.com/SPAROntologies/bido/blob/master/spar.png"/>
-    <schema:codeRepository rdf:resource="https://github.com/SPAROntologies/bido"/>
-    <schema:includedInDataCatalog rdf:resource="https://fairsharing.org/"/>
-    <bibo:status rdf:resource="http://purl.org/ontology/bibo/status/published"/>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)</dc:contributor>
+    <owl:versionIRI rdf:resource="http://purl.org/spar/bido-research-career-category/2026-10-05"/>
+    <rdfs:label>BiDO Research Career Category module (BiDO-Research-Career-Category)</rdfs:label>
     <dcterms:bibliographicCitation>Osborne, F., Peroni, S., Motta, E. (2014). Clustering Citation Distributions for Semantic Categorization and Citation Prediction. In Proceedings of the 4th Workshop on Linked Science (LISC 2014): 24–35. http://ceur-ws.org/Vol-1282/lisc2014_submission_9.pdf</dcterms:bibliographicCitation>
-    <owl:versionInfo>1.1.1</owl:versionInfo>
-    <vann:changes xml:lang="en">
-* **v1.1.1**: Added new documentation, including annotation properties (e.g., `bibo:doi`, `schema:codeRepository`, etc.), term properties (e.g., `vann:example`, `vs:term_status`, etc.), exemplary competency questions with their respective SPARQL queries, and a Grafoo diagram.
-    </vann:changes>
+    <schema:codeRepository rdf:resource="https://github.com/SPAROntologies/bido"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/holdsBibliometricDataInTime">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label>holds bibliometric data in time</rdfs:label>
-    <rdfs:label xml:lang="en">holds bibliometric data in time</rdfs:label>
-    <rdfs:comment>The relation between a person or any other publication-related entity and bibliometric data that the entity holds. The ontology permits one to specify the time period over which a bibliometric data is held, and the other contextual entities responsible for having provided such bibliometric data.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The relation between a person or any other publication-related entity and bibliometric data that the entity holds.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-core/"/>
-    <rdfs:range rdf:resource="http://purl.org/spar/bido/BibliometricDataInTime"/>
-    <vann:example>
-    :my-journal a fabio:Journal ;
-        bido:holdsBibliometricDataInTime :my-bibliometric-data-in-time .
-
-    :my-bibliometric-data-in-time a bido:BibliometricDataInTime ;
-        bido:accordingTo :my-organization ;
-        bido:withBibliometricData :my-numeric-bibliometric-data .
-    </vann:example>
-    <skos:note xml:lang="en">
-The ontology permits one to specify the time period over which a bibliometric data is held, and the other contextual entities responsible for having provided such bibliometric data.
-    </skos:note>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.essepuntato.it/2012/04/tvc/hasValue"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N11d0b56f62754c55b5ba13829b267ad3">
-    <owl:onProperty rdf:resource="http://purl.org/spar/bido/hasMeasure"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/median-acceleration">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">median acceleration</rdfs:label>
-    <rdfs:comment xml:lang="en">An acceleration point located in the middle of the considered research period.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve .
-
-    :my-curve a bido:Curve ;
-        bido:hasAccelerationPoint bido:median-acceleration .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/BibliometricData">
+  <rdf:Description rdf:about="http://purl.org/spar/bido/OrderOfMagnitude">
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>bibliometric data</rdfs:label>
-    <rdfs:label xml:lang="en">bibliometric data</rdfs:label>
-    <rdfs:comment>Any kind of bibliometric data. In particular, they are organised according two sub-concepts: numeric data and categorial data.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Any kind of bibliometric data. In particular, they are organised according two sub-concepts: numeric data and categorial data.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-core/"/>
     <vann:example>
-    :my-bibliometric-data-in-time a bido:BibliometricDataInTime ;
-        bido:accordingTo :my-organization ;
-        bido:withBibliometricData :my-bibliometric-data .
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:243-729 .
 
-    :my-bibliometric-data a bido:BibliometricData .
+    bido:243-729 a bido:OrderOfMagnitude .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/hasAccelerationPoint">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label>has acceleration point</rdfs:label>
-    <rdfs:comment>The relation between a curve and its acceleration point.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/Curve"/>
+    <rdfs:label xml:lang="en">order of magnitude</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <rdfs:range rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
+    <rdfs:comment xml:lang="en">A categorization of the number of citations received in the considered period according to a uniform model of common-sense estimation, which describes intervals of half-order of magnitude - i.e., “[0,1)”, “[1,3)”, “[3,9)”, “[9,27)”, “[27,81)”, “[81,243)”, “[243,729)”, etc.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/premature-deceleration">
+    <rdfs:label xml:lang="en">premature deceleration</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <vann:example>
     :my-research-category a bido:ResearchCareerCategory ;
         bido:hasCurve :my-curve .
 
     :my-curve a bido:Curve ;
         bido:hasAccelerationPoint bido:premature-deceleration .
-
-    bido:premature-deceleration a bido:AccelerationPoint .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">A deceleration point occurring early in the considered research period.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/81-243">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[81,243)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 81 (included) and 243 (excluded).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:81-243 .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/729-2187">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[729,2187)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 729 (included) and 2187 (excluded).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:729-2187 .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido-core">
-    <dc:description xml:lang="en">
-The core module of BiDO allows us to describe any entity and the related bibliometric data (through the property `bido:holdsBibliometricDataInTime`) at a certain time (i.e., `tvc:atTime`, a property defined by the imported TVC ontology for specifying temporal instants or intervals) and according to a certain agent (through the property `bido:accordingTo`, which is a sub-property of `prov:wasAttributedTo` and allows us to indicate the agent responsible for such bibliometric data).
-
-![The architecture of the BiDO-Core module.](bido-core.png)
-
-Two alternative kinds of bibliometric data are specifiable (through the property `bido:withBibliometricData`) in BiDO: numeric data and categorial data. 
-Numeric data are those characterised by a certain integer or float value related to a particular bibliometric measure. 
-Some of these measures – i.e., h-index, author citation count, e-index, and journal impact factor – are available in a particular module of BiDO responsible for describing the most common bibliometric measures.
-</dc:description>
-    <vann:preferredNamespaceUri xml:lang="en">http://purl.org/spar/bido</vann:preferredNamespaceUri>
-    <dcterms:bibliographicCitation>Osborne, F., Peroni, S., Motta, E. (2014). Clustering Citation Distributions for Semantic Categorization and Citation Prediction. In Proceedings of the 4th Workshop on Linked Science (LISC 2014): 24–35. http://ceur-ws.org/Vol-1282/lisc2014_submission_9.pdf</dcterms:bibliographicCitation>
-    <dcterms:publisher rdf:resource="https://ror.org/00wb4mk85"/>
-    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Silvio Peroni (http://orcid.org/0000-0003-0530-4305)</dc:creator>
-    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Francesco Osborne (https://orcid.org/0000-0001-6557-3131)</dc:creator>
-    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enrico Motta (https://orcid.org/0000-0003-0015-1952)</dc:creator>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2.2</owl:versionInfo>
-    <schema:codeRepository rdf:resource="https://github.com/SPAROntologies/bido"/>
-    <dcterms:modified>2026-09-13</dcterms:modified>
-    <dcterms:source rdf:resource="https://github.com/SPAROntologies/bido/blob/master/docs/cq.md"/>
-    <dc:date>2026-09-13</dc:date>
-    <foaf:logo rdf:resource="https://github.com/SPAROntologies/bido/blob/master/spar.png"/>
-    <dcterms:created>2015-07-14</dcterms:created>
-    <dc:title xml:lang="en">BiDO Core module (BiDO-Core)</dc:title>
-    <rdfs:seeAlso rdf:resource="http://www.sparontologies.net/ontologies/bido"/>
-    <owl:imports rdf:resource="http://purl.org/spar/tvc"/>
-    <bibo:doi>https://doi.org/10.25504/FAIRsharing.d7f0a9</bibo:doi>
-    <vann:changes xml:lang="en">
-* **v1.2.1**: Added new documentation, including annotation properties (e.g., `bibo:doi`, `schema:codeRepository`, etc.), term properties (e.g., `vann:example`, `vs:term_status`, etc.), exemplary competency questions with their respective SPARQL queries, and a Grafoo diagram.
-* **v1.2.2**: Fixed `tvc:atTime` range, adding `time:TemporalEntity`.
-    </vann:changes>
-    <vann:preferredNamespacePrefix xml:lang="en">bido</vann:preferredNamespacePrefix>
-    <bibo:status rdf:resource="http://purl.org/ontology/bibo/status/published"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <schema:includedInDataCatalog rdf:resource="https://fairsharing.org/"/>
-    <owl:versionIRI rdf:resource="http://purl.org/spar/bido-core/2026-09-13"/>
-    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)</dc:contributor>
-    <owl:priorVersion rdf:resource="http://purl.org/spar/bido-core/2026-08-14"/>
-    <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-    <dcterms:issued>2015-07-14</dcterms:issued>
-    <owl:backwardCompatibleWith rdf:resource="http://purl.org/spar/bido-core/2026-08-14"/>
-    <rdfs:label xml:lang="en">BiDO Core module (BiDO-Core)</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/27-81">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[27,81)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 27 (included) and 81 (excluded).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:27-81 .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/BibliometricMeasure">
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <vann:example>
-    :my-numeric-bibliometric-data a bido:NumericBibliometricData ;
-        bido:hasMeasure bido:journal-impact-factor .
-
-    bido:journal-impact-factor a bido:BibliometricMeasure .
-    </vann:example>
-    <rdfs:label xml:lang="en">bibliometric measure</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-core/"/>
-    <rdfs:comment xml:lang="en">Any kind of measure related with a bibliometric data (e.g., h-index, e-index, journal impact factor).</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/logarithmic">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/Growth"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">logarithmic</rdfs:label>
-    <rdfs:comment xml:lang="en">A logarithmic growth pattern characterizing the slope of the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasGrowth bido:logarithmic .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/decreasing">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/Trend"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>decreasing</rdfs:label>
-    <rdfs:comment>A decreasing trend characterizing the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/none">
     <vann:example>
     :my-research-category a bido:ResearchCareerCategory ;
         bido:hasCurve :my-curve .
 
     :my-curve a bido:Curve ;
-        bido:hasTrend bido:decreasing .
+        bido:hasAccelerationPoint bido:none .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:label xml:lang="en">none</rdfs:label>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
+    <rdfs:comment xml:lang="en">No significant acceleration or deceleration point along the curve.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/hasSlope">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The relation between a research career category and the slope of the curve that characterises it.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/bido/ResearchCareerCategory"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:low ;
+        bido:hasGrowth bido:exponential .
+    </vann:example>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/bido/Slope"/>
+    <rdfs:label xml:lang="en">has slope</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/27-81">
+    <rdfs:label>[27,81)</rdfs:label>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:27-81 .
+    </vann:example>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <rdfs:comment xml:lang="en">The citation interval between 27 (included) and 81 (excluded).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/increasing">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:comment>An increasing trend characterizing the curve.</rdfs:comment>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:increasing .
+    </vann:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/Trend"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label>increasing</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/5-years-beginning">
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:concernsResearchPeriod bido:5-years-beginning .
+    </vann:example>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+    <rdfs:comment xml:lang="en">The interval covering the first 5 years of a research career.</rdfs:comment>
+    <rdfs:label xml:lang="en">5 years beginning</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/bido/ResearchCareerCategory">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">research career category</rdfs:label>
-    <rdfs:comment xml:lang="en">Bibliometric data that includes categories describing the research career of people. Each of such categories is characterised by four specific dimensions: the research period considered, the curve of the choosed citation distribution, the slope of such curve, and the order of magnitude of the citation of such research period.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <rdfs:subClassOf rdf:nodeID="nb53811c1039f410ea6299f1726df0969b1"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/bido/CategorialBibliometricData"/>
     <vann:example>
     :my-research-career-activity a bido:ResearchCareerCategory ;
         bido:hasCurve :my-curve ;
@@ -351,384 +396,21 @@ Some of these measures – i.e., h-index, author citation count, e-index, and jo
         bido:hasStrength bido:low ;
         bido:hasGrowth bido:logarithmic .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/exponential">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/Growth"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">exponential</rdfs:label>
-    <rdfs:comment xml:lang="en">An exponential growth pattern characterising the slope of the curve.</rdfs:comment>
+    <rdfs:label xml:lang="en">research career category</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="n683df3bb17914ae18f7133db2b322013b1"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/bido/CategorialBibliometricData"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasGrowth bido:exponential .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/withBibliometricData">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label>with bibliometric data</rdfs:label>
-    <rdfs:label xml:lang="en">with bibliometric data</rdfs:label>
-    <rdfs:comment>The relation between an entity's bibliometric data in time and a definition of the type of bibliometric data held by this entity.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The relation between an entity's bibliometric data in time and a definition of the type of bibliometric data held by this entity.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/BibliometricDataInTime"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-core/"/>
-    <rdfs:range rdf:resource="http://purl.org/spar/bido/BibliometricData"/>
-    <vann:example>
-    :my-journal a fabio:Journal ;
-        bido:holdsBibliometricDataInTime :my-bibliometric-data-in-time .
-
-    :my-bibliometric-data-in-time a bido:BibliometricDataInTime ;
-        bido:accordingTo :my-organization ;
-        bido:withBibliometricData :my-numeric-bibliometric-data .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.essepuntato.it/2012/04/tvc/withValue"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/3-9">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[3,9)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 3 (included) and 9 (excluded).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:3-9 .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
-    <rdfs:comment xml:lang="en">The relation between an entity ascribed to an agent and that agent.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#"/>
-    <rdfs:label xml:lang="en">was attributed to</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/10-years-beginning">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
-    <rdfs:label xml:lang="en">10 years beginning</rdfs:label>
-    <rdfs:comment xml:lang="en">The interval covering the first 10 years of a research career.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:concernsResearchPeriod bido:10-years-beginning .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/hasStrength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has strength</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between the slope and the related strength.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/Slope"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <rdfs:range rdf:resource="http://purl.org/spar/bido/Strength"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasStrength bido:low .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/hasSlope">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has slope</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between a research career category and the slope of the curve that characterises it.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/ResearchCareerCategory"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <rdfs:range rdf:resource="http://purl.org/spar/bido/Slope"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasStrength bido:low ;
-        bido:hasGrowth bido:exponential .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/243-729">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[243,729)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 243 (included) and 729 (excluded).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:243-729 .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b4">
-    <owl:inverseOf rdf:resource="http://purl.org/spar/bido/withBibliometricData"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">person</rdfs:label>
-    <rdfs:comment xml:lang="en">A person.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/NumericBibliometricData">
-    <vann:example>
-    :my-numeric-bibliometric-data a bido:NumericBibliometricData ;
-        bido:hasMeasure bido:journal-impact-factor ;
-        bido:hasNumericValue "2.464"^^xsd:float .
-    </vann:example>
-    <rdfs:subClassOf rdf:nodeID="N432f2d842bf34b96a63e49211360827d"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/bido/BibliometricData"/>
-    <rdfs:subClassOf rdf:nodeID="N11d0b56f62754c55b5ba13829b267ad3"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-core/"/>
-    <rdfs:label xml:lang="en">numeric bibliometric data</rdfs:label>
-    <rdfs:comment xml:lang="en">Bibliometric data represented by numbers. Such numeric data are those characterised by a certain integer or float value related to a particular bibliometric measure.</rdfs:comment>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/AccelerationPoint">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">acceleration point</rdfs:label>
-    <rdfs:comment xml:lang="en">The acceleration or deceleration point (none or premature, median, overdue acceleration/deceleration) of the curve, if any.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <rdfs:subClassOf rdf:nodeID="nb53811c1039f410ea6299f1726df0969b5"/>
-    <vann:example>
-    :my-research-career-activity a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve .
-
-    :my-curve a bido:Curve ;
-        bido:hasAccelerationPoint bido:premature-deceleration .
-
-    bido:premature-deceleration a bido:AccelerationPoint .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/premature-deceleration">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">premature deceleration</rdfs:label>
-    <rdfs:comment xml:lang="en">A deceleration point occurring early in the considered research period.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve .
-
-    :my-curve a bido:Curve ;
-        bido:hasAccelerationPoint bido:premature-deceleration .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b12">
-    <rdf:first rdf:nodeID="nb53811c1039f410ea6299f1726df0969b7"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/overdue-deceleration">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">overdue deceleration</rdfs:label>
-    <rdfs:comment xml:lang="en">A deceleration point occurring late in the considered research period.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve .
-
-    :my-curve a bido:Curve ;
-        bido:hasAccelerationPoint bido:overdue-deceleration .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/CategorialBibliometricData">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">categorial bibliometric data</rdfs:label>
-    <rdfs:comment xml:lang="en">Categorical information that characterises publication-related entities from a bibliometric point of view.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-core/"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/bido/BibliometricData"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve ;
-        bido:hasSlope :my-slope ;
-        bido:hasOrderOfMagnitude bido:243-729 ;
-        bido:concernsResearchPeriod bido:5-years-beginning .
-
-    bido:ResearchCareerCategory rdfs:subClassOf bido:CategorialBibliometricData .
-    </vann:example>
-    <vann:example>
-    :my-person a foaf:Person ;
-        bido:holdsBibliometricDataInTime :my-bibliometric-data-in-time .
-
-    :my-bibliometric-data-in-time a bido:BibliometricDataInTime ;
-        bido:accordingTo :my-organization ;
-        bido:withBibliometricData :my-categorial-bibliometric-data .
-
-    :my-categorial-bibliometric-data a bido:CategorialBibliometricData .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b10">
-    <rdf:first rdf:resource="http://purl.org/spar/bido/decreasing"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/high">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/Strength"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">high</rdfs:label>
-    <rdfs:comment xml:lang="en">A high strength characterizing the slope of the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasStrength bido:high .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/withinContext">
-    <rdfs:label xml:lang="en">within context</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
-    <rdfs:domain rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
-    <rdfs:comment xml:lang="en">The relation between a value in time and the specific context within which the fact of the entity having the value is relevant.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/6561-19683">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[6561,19683)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 6561 (included) and 19683 (excluded).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:6561-19683 .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/hasGrowth">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has growth</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between the slope and the related growth.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/Slope"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <rdfs:range rdf:resource="http://purl.org/spar/bido/Growth"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasGrowth bido:exponential .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/Growth">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">growth</rdfs:label>
-    <rdfs:comment xml:lang="en">A kind of growth - i.e., linear/polynomial/exponential/logarithmic - that can characterise a slope.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-career-activity a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasGrowth bido:logarithmic .
-
-    bido:logarithmic a bido:Growth .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/accordingTo">
-    <rdfs:label xml:lang="en">according to</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.essepuntato.it/2012/04/tvc/withinContext"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:comment xml:lang="en">The relation between a bibliometric data in time situation and an agent who provided such data.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/BibliometricDataInTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-core/"/>
-    <vann:example>
-    :my-bibliometric-data-in-time a bido:BibliometricDataInTime ;
-        bido:accordingTo :my-organization ;
-        bido:withBibliometricData :my-numeric-bibliometric-data .
-
-    :my-organization a prov:Agent .
-    </vann:example>
-    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/15-years-beginning">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
-    <rdfs:label xml:lang="en">15 years beginning</rdfs:label>
-    <rdfs:comment xml:lang="en">The interval covering the first 15 years of a research career.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:concernsResearchPeriod bido:15-years-beginning .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b6">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="nb53811c1039f410ea6299f1726df0969b11"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/moderate">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/Strength"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">moderate</rdfs:label>
-    <rdfs:comment xml:lang="en">A moderate strength characterizing the slope of the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasStrength bido:moderate .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/BibliometricDataInTime">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>bibliometric data in time</rdfs:label>
-    <rdfs:label xml:lang="en">bibliometric data in time</rdfs:label>
-    <rdfs:comment>A particular situation that describes a bibliometric data a person, an article, or any other publication-related entity may have, that can be restricted to a particular time interval.</rdfs:comment>
-    <rdfs:comment xml:lang="en">A particular situation that describes a bibliometric data a person, an article, or any other publication-related entity may have, that can be restricted to a particular time interval.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-core/"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:subClassOf rdf:nodeID="Nd4d8162020ce4b7eac79939eaeece940"/>
-    <rdfs:subClassOf rdf:nodeID="N9c5d1a9913a549a6884e9bd9d5e39ede"/>
-    <rdfs:subClassOf rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
-    <vann:example>
-    :my-bibliometric-data-in-time a bido:BibliometricDataInTime ;
-        tvc:atTime :my-time-interval ;
-        bido:accordingTo :my-organization ;
-        bido:withBibliometricData :my-bibliometric-data .
-    </vann:example>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/flat">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/Trend"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">flat</rdfs:label>
-    <rdfs:comment xml:lang="en">A constant trend characterising the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve .
-
-    :my-curve a bido:Curve ;
-        bido:hasTrend bido:flat .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">Bibliometric data that includes categories describing the research career of people. Each of such categories is characterised by four specific dimensions: the research period considered, the curve of the chosen citation distribution, the slope of such curve, and the order of magnitude of the citation of such research period.</rdfs:comment>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/bido/hasTrend">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label>has trend</rdfs:label>
-    <rdfs:comment>The relation between a curve and its trend.</rdfs:comment>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdfs:domain rdf:resource="http://purl.org/spar/bido/Curve"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment>The relation between a curve and its trend.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
     <rdfs:range rdf:resource="http://purl.org/spar/bido/Trend"/>
+    <rdfs:label>has trend</rdfs:label>
     <vann:example>
     :my-research-category a bido:ResearchCareerCategory ;
         bido:hasCurve :my-curve .
@@ -738,101 +420,27 @@ Some of these measures – i.e., h-index, author citation count, e-index, and jo
 
     bido:increasing a bido:Trend .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/0-1">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[0,1)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 0 (included) and 1 (excluded).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:0-1 .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/19683-59049">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[19683,59049)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 19683 (included) and 59049 (excluded).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:19683-59049 .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b2">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-    <owl:onProperty rdf:nodeID="nb53811c1039f410ea6299f1726df0969b3"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/low">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/Strength"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">low</rdfs:label>
-    <rdfs:comment xml:lang="en">A low strength characterizing the slope of the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasStrength bido:low .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/bido/hasOrderOfMagnitude">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has order of magnitude</rdfs:label>
     <rdfs:comment xml:lang="en">The relation between a research career category and the order of magnitude of the citation distribution that characterises it.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/ResearchCareerCategory"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <rdfs:range rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/bido/ResearchCareerCategory"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <vann:example>
     :my-research-category a bido:ResearchCareerCategory ;
         bido:hasOrderOfMagnitude bido:243-729 .
 
     bido:243-729 a bido:OrderOfMagnitude .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <rdfs:label xml:lang="en">has order of magnitude</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/hasCurve">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has curve</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between a research career category and the curve that characterises it.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/ResearchCareerCategory"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <rdfs:range rdf:resource="http://purl.org/spar/bido/Curve"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve .
-
-    :my-curve a bido:Curve ;
-        bido:hasTrend bido:increasing ;
-        bido:hasAccelerationPoint bido:premature-deceleration .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/Trend">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">trend</rdfs:label>
-    <rdfs:comment xml:lang="en">The flat/decreasing/increasing trend characterising the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-career-activity a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve .
-
-    :my-curve a bido:Curve ;
-        bido:hasTrend bido:increasing .
-
-    bido:increasing a bido:Trend .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/bido/median-deceleration">
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdfs:label xml:lang="en">median deceleration</rdfs:label>
@@ -845,14 +453,45 @@ Some of these measures – i.e., h-index, author citation count, e-index, and jo
     :my-curve a bido:Curve ;
         bido:hasAccelerationPoint bido:median-deceleration .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/81-243">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <rdfs:comment xml:lang="en">The citation interval between 81 (included) and 243 (excluded).</rdfs:comment>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:81-243 .
+    </vann:example>
+    <rdfs:label>[81,243)</rdfs:label>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b4">
+    <owl:inverseOf rdf:resource="http://purl.org/spar/bido/withBibliometricData"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/Growth">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">growth</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <vann:example>
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:logarithmic .
+
+    bido:logarithmic a bido:Growth .
+    </vann:example>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">A kind of growth - i.e., linear/polynomial/exponential/logarithmic - that can characterise a slope.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/bido/premature-acceleration">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdfs:label xml:lang="en">premature acceleration</rdfs:label>
-    <rdfs:comment xml:lang="en">An acceleration point occurring early in the considered research period.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
+    <rdfs:comment xml:lang="en">An acceleration point occurring early in the considered research period.</rdfs:comment>
     <vann:example>
     :my-research-category a bido:ResearchCareerCategory ;
         bido:hasCurve :my-curve .
@@ -860,39 +499,191 @@ Some of these measures – i.e., h-index, author citation count, e-index, and jo
     :my-curve a bido:Curve ;
         bido:hasAccelerationPoint bido:premature-acceleration .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/atTime">
-    <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-    <rdfs:domain rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
-    <rdfs:label xml:lang="en">at time</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between a situation and the particular temporal instant or time period in which the situation takes place.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/exponential">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/Growth"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:exponential .
+    </vann:example>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">exponential</rdfs:label>
+    <rdfs:comment xml:lang="en">An exponential growth pattern characterising the slope of the curve.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b1">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:nodeID="nb53811c1039f410ea6299f1726df0969b2"/>
-    <owl:onProperty rdf:nodeID="nb53811c1039f410ea6299f1726df0969b4"/>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/logarithmic">
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">logarithmic</rdfs:label>
+    <rdfs:comment xml:lang="en">A logarithmic growth pattern characterizing the slope of the curve.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:logarithmic .
+    </vann:example>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/Growth"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval">
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b13">
+    <owl:inverseOf rdf:resource="http://purl.org/spar/bido/hasAccelerationPoint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/polynomial">
+    <rdf:type rdf:resource="http://purl.org/spar/bido/Growth"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="en">polynomial</rdfs:label>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:polynomial .
+    </vann:example>
+    <rdfs:comment xml:lang="en">A polynomial growth pattern characterizing the slope of the curve.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/2187-6561">
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="en">The citation interval between 2187 (included) and 6561 (excluded).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:label>[2187,6561)</rdfs:label>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:2187-6561 .
+    </vann:example>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/median-acceleration">
+    <rdfs:comment xml:lang="en">An acceleration point located in the middle of the considered research period.</rdfs:comment>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:median-acceleration .
+    </vann:example>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
+    <rdfs:label xml:lang="en">median acceleration</rdfs:label>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/AccelerationPoint">
+    <vann:example>
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:premature-deceleration .
+
+    bido:premature-deceleration a bido:AccelerationPoint .
+    </vann:example>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:subClassOf rdf:nodeID="n683df3bb17914ae18f7133db2b322013b5"/>
+    <rdfs:comment xml:lang="en">The acceleration or deceleration point (none or premature, median, overdue acceleration/deceleration) of the curve, if any.</rdfs:comment>
+    <rdfs:label xml:lang="en">acceleration point</rdfs:label>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">interval</rdfs:label>
-    <rdfs:label xml:lang="en">time interval</rdfs:label>
-    <rdfs:comment xml:lang="en">The interval of research years that it is taken into consideration (e.g., the first 5/10 years).</rdfs:comment>
-    <rdfs:comment xml:lang="en">A temporal entity with an extent or duration.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time#"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b7">
+  <rdf:Description rdf:about="http://purl.org/spar/bido/high">
+    <rdfs:comment xml:lang="en">A high strength characterizing the slope of the curve.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/Strength"/>
+    <rdfs:label xml:lang="en">high</rdfs:label>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasStrength bido:high .
+    </vann:example>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/243-729">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:243-729 .
+    </vann:example>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label>[243,729)</rdfs:label>
+    <rdfs:comment xml:lang="en">The citation interval between 243 (included) and 729 (excluded).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/6561-19683">
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:6561-19683 .
+    </vann:example>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">The citation interval between 6561 (included) and 19683 (excluded).</rdfs:comment>
+    <rdfs:label>[6561,19683)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b2">
+    <owl:allValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <owl:onProperty rdf:nodeID="n683df3bb17914ae18f7133db2b322013b3"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:nodeID="nb53811c1039f410ea6299f1726df0969b8"/>
-    <owl:onProperty rdf:resource="http://purl.org/spar/bido/hasTrend"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b5">
+    <owl:allValuesFrom rdf:nodeID="n683df3bb17914ae18f7133db2b322013b6"/>
+    <owl:onProperty rdf:nodeID="n683df3bb17914ae18f7133db2b322013b13"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/15-years-beginning">
+    <rdfs:comment xml:lang="en">The interval covering the first 15 years of a research career.</rdfs:comment>
+    <rdfs:label xml:lang="en">15 years beginning</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:concernsResearchPeriod bido:15-years-beginning .
+    </vann:example>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/3-9">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:3-9 .
+    </vann:example>
+    <rdfs:comment xml:lang="en">The citation interval between 3 (included) and 9 (excluded).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label>[3,9)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/1-3">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:1-3 .
+    </vann:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <rdfs:label>[1,3)</rdfs:label>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">The citation interval between 1 (included) and 3 (excluded).</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/bido/Strength">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">strength</rdfs:label>
     <rdfs:comment xml:lang="en">A kind of strength - i.e., low/moderate/high - that can characterise a slope.</rdfs:comment>
+    <rdfs:label xml:lang="en">strength</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
     <vann:example>
     :my-research-career-activity a bido:ResearchCareerCategory ;
@@ -903,259 +694,147 @@ Some of these measures – i.e., h-index, author citation count, e-index, and jo
 
     bido:low a bido:Strength .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N432f2d842bf34b96a63e49211360827d">
-    <owl:onProperty rdf:resource="http://purl.org/spar/bido/hasNumericValue"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/ValueInTime">
-    <rdfs:comment xml:lang="en">A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends.</rdfs:comment>
-    <rdfs:label xml:lang="en">value in time</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/withValue">
-    <rdfs:range rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
-    <rdfs:label xml:lang="en">with value</rdfs:label>
-    <rdfs:comment xml:lang="en">The relation between the value in time situation and the actual value held by the entity partaking in that situation.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/prov#Agent">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#"/>
-    <rdfs:comment xml:lang="en">Something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.</rdfs:comment>
-    <rdfs:label xml:lang="en">agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/increasing">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/Trend"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>increasing</rdfs:label>
-    <rdfs:comment>An increasing trend characterizing the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve .
-
-    :my-curve a bido:Curve ;
-        bido:hasTrend bido:increasing .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2f756e098ee54a67a7167006348763d6">
-    <owl:unionOf rdf:nodeID="Naa3d782aefd5471fa3ff4c0f10cd00fb"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/hasValue">
-    <rdfs:range rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
-    <rdfs:comment xml:lang="en">The relation between an entity and a value in time situation.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc/"/>
-    <rdfs:label xml:lang="en">has value</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/Slope">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">slope</rdfs:label>
-    <rdfs:comment xml:lang="en">The slope of a curve, in terms of strength (low/moderate/high) and kind of growth (linear/polynomial/exponential/logarithmic).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-career-activity a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasStrength bido:low ;
-        bido:hasGrowth bido:logarithmic .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/9-27">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[9,27)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 9 (included) and 27 (excluded).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:9-27 .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/1-3">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>[1,3)</rdfs:label>
-    <rdfs:comment xml:lang="en">The citation interval between 1 (included) and 3 (excluded).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:1-3 .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/hasNumericValue">
-    <vann:example>
-    :my-numeric-bibliometric-data a bido:NumericBibliometricData ;
-        bido:hasNumericValue "2.464"^^xsd:float .
-    </vann:example>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:nodeID="N2f756e098ee54a67a7167006348763d6"/>
-    <rdfs:label xml:lang="en">has numeric value</rdfs:label>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/NumericBibliometricData"/>
-    <rdfs:comment xml:lang="en">The actual value of the bibliometric data in consideration.</rdfs:comment>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-core/"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#float">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/none">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">none</rdfs:label>
-    <rdfs:comment xml:lang="en">No significant acceleration or deceleration point along the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve .
-
-    :my-curve a bido:Curve ;
-        bido:hasAccelerationPoint bido:none .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b9">
-    <rdf:first rdf:resource="http://purl.org/spar/bido/increasing"/>
-    <rdf:rest rdf:nodeID="nb53811c1039f410ea6299f1726df0969b10"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/rights">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/polynomial">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/Growth"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">polynomial</rdfs:label>
-    <rdfs:comment xml:lang="en">A polynomial growth pattern characterizing the slope of the curve.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasSlope :my-slope .
-
-    :my-slope a bido:Slope ;
-        bido:hasGrowth bido:polynomial .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b5">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:nodeID="nb53811c1039f410ea6299f1726df0969b6"/>
-    <owl:onProperty rdf:nodeID="nb53811c1039f410ea6299f1726df0969b13"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/overdue-acceleration">
-    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">overdue acceleration</rdfs:label>
-    <rdfs:comment xml:lang="en">An acceleration point occurring late in the considered research period.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-category a bido:ResearchCareerCategory ;
-        bido:hasCurve :my-curve .
-
-    :my-curve a bido:Curve ;
-        bido:hasAccelerationPoint bido:overdue-acceleration .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/OrderOfMagnitude">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">order of magnitude</rdfs:label>
-    <rdfs:comment xml:lang="en">A categorization of the number of citations received in the considered period according to a uniform model of common-sense estimation, which describes intervals of half-order of magnitude - i.e., “[0,1)”, “[1,3)”, “[3,9)”, “[9,27)”, “[27,81)”, “[81,243)”, “[243,729)”, etc.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
-    <vann:example>
-    :my-research-career-activity a bido:ResearchCareerCategory ;
-        bido:hasOrderOfMagnitude bido:243-729 .
-
-    bido:243-729 a bido:OrderOfMagnitude .
-    </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/date">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc38a75174af144719cb8645f483c6ada">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/bido/hasMeasure">
-    <rdfs:label xml:lang="en">has measure</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-core/"/>
-    <rdfs:comment xml:lang="en">The relation between some bibliometric data and a measure (e.g., h-index, e-index, journal impact factor).</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/spar/bido/NumericBibliometricData"/>
-    <rdfs:range rdf:resource="http://purl.org/spar/bido/BibliometricMeasure"/>
-    <vann:example>
-    :my-numeric-bibliometric-data a bido:NumericBibliometricData ;
-        bido:hasMeasure bido:journal-impact-factor .
-    </vann:example>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core#"/>
-    <rdfs:label xml:lang="en">concept</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">An idea or notion; a unit of thought.</rdfs:comment>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9c5d1a9913a549a6884e9bd9d5e39ede">
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b10">
+    <rdf:first rdf:resource="http://purl.org/spar/bido/decreasing"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b1">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#Interval"/>
-    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+    <owl:onProperty rdf:nodeID="n683df3bb17914ae18f7133db2b322013b4"/>
+    <owl:allValuesFrom rdf:nodeID="n683df3bb17914ae18f7133db2b322013b2"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Naa3d782aefd5471fa3ff4c0f10cd00fb">
-    <rdf:rest rdf:nodeID="Nc38a75174af144719cb8645f483c6ada"/>
-    <rdf:first rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/9-27">
+    <rdfs:comment xml:lang="en">The citation interval between 9 (included) and 27 (excluded).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <rdfs:label>[9,27)</rdfs:label>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:9-27 .
+    </vann:example>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b3">
-    <owl:inverseOf rdf:resource="http://purl.org/spar/bido/holdsBibliometricDataInTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b11">
-    <rdf:first rdf:resource="http://purl.org/spar/bido/Curve"/>
-    <rdf:rest rdf:nodeID="nb53811c1039f410ea6299f1726df0969b12"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b13">
-    <owl:inverseOf rdf:resource="http://purl.org/spar/bido/hasAccelerationPoint"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb53811c1039f410ea6299f1726df0969b8">
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:oneOf rdf:nodeID="nb53811c1039f410ea6299f1726df0969b9"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/description">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b11">
+    <rdf:first rdf:resource="http://purl.org/spar/bido/Curve"/>
+    <rdf:rest rdf:nodeID="n683df3bb17914ae18f7133db2b322013b12"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd4d8162020ce4b7eac79939eaeece940">
-    <owl:allValuesFrom rdf:resource="http://purl.org/spar/bido/BibliometricMeasure"/>
-    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withValue"/>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/hasCurve">
+    <rdfs:comment xml:lang="en">The relation between a research career category and the curve that characterises it.</rdfs:comment>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasTrend bido:increasing ;
+        bido:hasAccelerationPoint bido:premature-deceleration .
+    </vann:example>
+    <rdfs:label xml:lang="en">has curve</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/bido/Curve"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/bido/ResearchCareerCategory"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b12">
+    <rdf:first rdf:nodeID="n683df3bb17914ae18f7133db2b322013b7"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/hasAccelerationPoint">
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
+    <rdfs:comment>The relation between a curve and its acceleration point.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/spar/bido/Curve"/>
+    <rdfs:label>has acceleration point</rdfs:label>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:premature-deceleration .
+
+    bido:premature-deceleration a bido:AccelerationPoint .
+    </vann:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b7">
+    <owl:allValuesFrom rdf:nodeID="n683df3bb17914ae18f7133db2b322013b8"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/bido/hasTrend"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/overdue-deceleration">
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:overdue-deceleration .
+    </vann:example>
+    <rdfs:comment xml:lang="en">A deceleration point occurring late in the considered research period.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/AccelerationPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="en">overdue deceleration</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:about="http://purl.org/spar/bido/729-2187">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/bido-research-career-category/"/>
+    <rdfs:comment xml:lang="en">The citation interval between 729 (included) and 2187 (excluded).</rdfs:comment>
+    <vann:example>
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:729-2187 .
+    </vann:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/spar/bido/OrderOfMagnitude"/>
+    <rdfs:label>[729,2187)</rdfs:label>
+    <ns2:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b6">
+    <owl:intersectionOf rdf:nodeID="n683df3bb17914ae18f7133db2b322013b11"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b8">
+    <owl:oneOf rdf:nodeID="n683df3bb17914ae18f7133db2b322013b9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b9">
+    <rdf:rest rdf:nodeID="n683df3bb17914ae18f7133db2b322013b10"/>
+    <rdf:first rdf:resource="http://purl.org/spar/bido/increasing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n683df3bb17914ae18f7133db2b322013b3">
+    <owl:inverseOf rdf:resource="http://purl.org/spar/bido/holdsBibliometricDataInTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/rights">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/date">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#float">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
 </rdf:RDF>

@@ -1,0 +1,23 @@
+@prefix ns1: <http://purl.org/spar/bido/> .
+@prefix ns2: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+ns1:hasAccelerationPoint a owl:ObjectProperty ;
+    rdfs:label "has acceleration point" ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasCurve :my-curve .
+
+    :my-curve a bido:Curve ;
+        bido:hasAccelerationPoint bido:premature-deceleration .
+
+    bido:premature-deceleration a bido:AccelerationPoint .
+    """ ;
+    rdfs:comment "The relation between a curve and its acceleration point." ;
+    rdfs:domain ns1:Curve ;
+    rdfs:isDefinedBy <http://purl.org/spar/bido-research-career-category/> ;
+    rdfs:range ns1:AccelerationPoint ;
+    ns2:term_status <http://purl.org/linked-data/registry#statusStable> .
+
