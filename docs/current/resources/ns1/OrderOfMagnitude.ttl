@@ -1,0 +1,18 @@
+@prefix ns1: <http://purl.org/spar/bido/> .
+@prefix ns2: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+ns1:OrderOfMagnitude a owl:Class ;
+    rdfs:label "order of magnitude"@en ;
+    vann:example """
+    :my-research-career-activity a bido:ResearchCareerCategory ;
+        bido:hasOrderOfMagnitude bido:243-729 .
+
+    bido:243-729 a bido:OrderOfMagnitude .
+    """ ;
+    rdfs:comment "A categorization of the number of citations received in the considered period according to a uniform model of common-sense estimation, which describes intervals of half-order of magnitude - i.e., “[0,1)”, “[1,3)”, “[3,9)”, “[9,27)”, “[27,81)”, “[81,243)”, “[243,729)”, etc."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/bido-research-career-category/> ;
+    ns2:term_status <http://purl.org/linked-data/registry#statusStable> .
+

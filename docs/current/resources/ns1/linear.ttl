@@ -1,0 +1,20 @@
+@prefix ns1: <http://purl.org/spar/bido/> .
+@prefix ns2: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+ns1:linear a ns1:Growth,
+        owl:NamedIndividual ;
+    rdfs:label "linear"@en ;
+    vann:example """
+    :my-research-category a bido:ResearchCareerCategory ;
+        bido:hasSlope :my-slope .
+
+    :my-slope a bido:Slope ;
+        bido:hasGrowth bido:linear .
+    """ ;
+    rdfs:comment "A linear growth pattern characterizing the slope of the curve."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/bido-research-career-category/> ;
+    ns2:term_status <http://purl.org/linked-data/registry#statusStable> .
+
