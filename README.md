@@ -1,6 +1,12 @@
 # BiDO Research Career Categories module (BiDO-Research-Career-Categories)
 
-The BiDO Research Career Categories module (BiDO-Research-Career-Categories) extends the class CategorialData of BiDO-Core with specific categories describing the research career of people.
+[![License](https://img.shields.io/github/license/SPAROntologies/bido-research-career-category)](LICENSE.md)
+[![Release](https://img.shields.io/github/v/release/SPAROntologies/bido-research-career-category)](https://github.com/SPAROntologies/bido-research-career-category/releases/latest)
+[![Tests](https://img.shields.io/github/actions/workflow/status/SPAROntologies/bido-research-career-category/validation.yml?label=tests)](https://github.com/SPAROntologies/bido-research-career-category/actions/workflows/validation.yml)
+[![Documentation](https://img.shields.io/badge/docs-sparontologies.net-blue)](http://www.sparontologies.net/ontologies/bido)
+[![IRI](https://img.shields.io/badge/IRI-purl.org%2Fspar%2Fbido--research--career--category-blue)](http://purl.org/spar/bido-research-career-category)
+
+The **_BiDO Research Career Categories module (BiDO-Research-Career-Categories)_** extends the class CategorialData of BiDO-Core with specific categories describing the research career of people.
 
 **URL:** http://purl.org/spar/bido-research-career-category
 
