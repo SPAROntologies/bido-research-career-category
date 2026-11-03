@@ -2,8 +2,8 @@
   {
     "@id": "http://purl.org/spar/bido/15-years-beginning",
     "@type": [
-      "http://www.w3.org/2006/time#Interval",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.w3.org/2006/time#Interval"
     ],
     "http://purl.org/vocab/vann/example": [
       {

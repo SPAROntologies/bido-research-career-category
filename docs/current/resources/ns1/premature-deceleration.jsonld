@@ -2,8 +2,8 @@
   {
     "@id": "http://purl.org/spar/bido/premature-deceleration",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/spar/bido/AccelerationPoint"
+      "http://purl.org/spar/bido/AccelerationPoint",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://purl.org/vocab/vann/example": [
       {
